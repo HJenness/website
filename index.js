@@ -6,7 +6,7 @@ const port = 5001
 
 
 app.listen(port, () => {            //server starts listening for any attempts from a client to connect at port: {port}
-    console.log(`Now listening on port ${port}`); 
+	console.log(`Now listening on port ${port}`); 
 });
 
 app.get("/", function(req, res){
@@ -14,14 +14,11 @@ app.get("/", function(req, res){
 });
 
 app.get("/about", function(req, res){
-	console.log("Hello")
-	res.send("About page")
+	res.sendFile('about.html', {root: __dirname});
 });
 
-app.get("/scripts/areaweatherinfo.js", function(req, res){
-	res.sendFile('/scripts/areaweatherinfo.js', {root: __dirname});  
-})
+app.use('/views', express.static('views'));
 
-app.get("/images/Norhtcharlestonpic.png", function(req, res){
-	res.sendFile('/images/Norhtcharlestonpic.png', {root: __dirname});  
-})
+app.use('/images', express.static('images'));
+
+app.use('/scripts', express.static('scripts'));

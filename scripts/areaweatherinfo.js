@@ -35,7 +35,7 @@ fetch(apiUrl).then(response => {
 	concat = concat + "Country: " + data.location.country + "\n"
 	concat = concat + "Current Temperature(F): " + data.current.temp_f + "\n"
 	concat = concat + "Feel Like Temperature(F): " + data.current.feelslike_f + "\n"
-	concat = concat + "Wind Speed(mph): " + data.current.wind_mph + "\n"
+	
 	
 	
 	// set <p> tag text to be equal to values returned by API call
@@ -44,7 +44,7 @@ fetch(apiUrl).then(response => {
 	document.getElementById('weatherInformation').innerText = concat
 	
 	// store the current temperature in a variable for easier access
-	var temp = 80
+	var temp = data.current.temp_f
 	
 	// change to RED color when its hot and blue when its cold
 	if(temp > 80){

@@ -9,11 +9,12 @@
     </head>
     <body>
         <div>Hello, Welcome to Project 1!</div>
-		<p id="weatherInformation">This is a test</p>
-		<img src="/images/Norhtcharlestonpic.png">
-		<script type="text/javascript" src="scripts/areaweatherinfo.js"></script>
-		
-		
+		<p id="weatherInformation">Enter a zip code and press the button!</p>
+        <form id="zipCode">
+            Zip Code: <input type="text" name="zip" value="29445">
+        </form>
+        <button onclick="getWeather()">Get Weather</button>
+		<script src="scripts/areaweatherinfo.js"></script>
     </body>
 	
 </html>

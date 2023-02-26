@@ -7,6 +7,8 @@ The zipCode will house your hometown's zipcode or north charleston's
 var apiKey = "de80e1766185475c950202953231002" 
 var zipCode = "29406" //29445 is goose creek so change this unless you live there
 
+function getWeather(){
+
 /*
 We are declaring the variable "apiUrl" which will consist of the API route to hit 
 from the weatherapi, along with your unique api key, and the zip code of the location of
@@ -14,7 +16,9 @@ where we would like to receive the current weather from.
 
 The fetch() call which is invoked is a standard API call with JS
 */
+zipCode=document.getElementById(zipCode).element["zip"].value;
 var apiUrl = 'http://api.weatherapi.com/v1/current.json?key=' + apiKey + '&q=' + zipCode + '&aqi=no';
+
 fetch(apiUrl).then(response => {
 	return response.json();
 }).then(data => {
@@ -55,6 +59,7 @@ fetch(apiUrl).then(response => {
 	// error handling code will go here
 	// we will log a console message/notify the user that the API is unavailable
 });
+}
 
 
 
